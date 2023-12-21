@@ -1,0 +1,24 @@
+{
+    "gender": [
+      { "id": 1, "title": "Male" },
+      { "id": 2, "title": "Female" },
+      { "id": 3, "title": "Other" }
+    ],
+    "hobbies": [
+      { "id": 1, "title": "Reading" },
+      { "id": 2, "title": "Sports" },
+      { "id": 3, "title": "Traveling" },
+      { "id": 4, "title": "Music" },
+      { "id": 5, "title": "Cooking" },
+      { "id": 6, "title": "Gaming" },
+      { "id": 7, "title": "Photography" }
+    ],
+    "seatsAmount": [2, 4, 5, 7],
+    "motorTypes": [
+      { "id": 1, "title": "Electric" },
+      { "id": 2, "title": "Fuel" },
+      { "id": 3, "title": "Hybrid" },
+      { "id": 4, "title": "Diesel" },
+      { "id": 5, "title": "Natural Gas" }
+    ]
+}
