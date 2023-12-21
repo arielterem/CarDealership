@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    padding-top: 70px;
+    background: linear-gradient(90deg, rgb(145, 105, 239) 0%, rgb(131, 185, 255) 35%, rgba(174,254,255,1) 100%);
+    // background: linear-gradient(90deg, rgba(238,198,255,1) 0%, rgba(154,153,255,1) 35%, rgba(174,254,255,1) 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+
+    }
+}

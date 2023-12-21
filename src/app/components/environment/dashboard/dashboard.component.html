@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row mt-4">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <mat-card>
+                    <app-graph-card [type]="24"></app-graph-card>
+                </mat-card>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <mat-card>
+                    <app-graph-card [type]="7"></app-graph-card>
+                </mat-card>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <mat-card>
+                    <app-info-card [type]="'total'"></app-info-card>
+                </mat-card>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <mat-card>
+                    <app-info-card [type]="'clientsOfVisitors'"></app-info-card>
+                </mat-card>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 mb-4">
+            <mat-card>
+                <app-gender-analysis></app-gender-analysis>
+            </mat-card>
+        </div>
+        <div class="col-md-6 col-sm-12 mb-4">
+            <mat-card>
+                <app-motor-type-by-gender></app-motor-type-by-gender>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12  mb-4">
+            <mat-card>
+                <app-age-by-hobby></app-age-by-hobby>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12  mb-4">
+            <mat-card>
+                <app-clients></app-clients>
+            </mat-card>
+        </div>
+    </div>
+</div>

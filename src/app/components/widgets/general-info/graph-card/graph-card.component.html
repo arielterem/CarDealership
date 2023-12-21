@@ -1,0 +1,17 @@
+<div class="container" [matTooltip]="infoTooltip">
+
+    <div class="text">
+        <h4>{{label}}</h4>
+
+        <span class="total">{{total}}</span>
+
+        <span>
+            <mat-icon class="green" *ngIf="icon == 'up'" color="primary">trending_up</mat-icon>
+            <mat-icon class="red" *ngIf="icon == 'down'" color="primary">trending_down</mat-icon>
+        </span>
+
+    </div>
+
+    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+        style="width: 100%; height: 60px; display: block;"></highcharts-chart>
+</div>

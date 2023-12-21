@@ -1,0 +1,88 @@
+.container {
+    margin-top: 40px;
+}
+
+.caption {
+    color: white;
+    text-align: left;
+    line-height: 1.8;
+
+    div {
+        margin-bottom: 1em;
+    }
+}
+
+.title {
+    font-size: 3em;
+    letter-spacing: 7px;
+    word-spacing: 7px;
+    row-gap: 5em;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.734) -16px -6px 6px;
+}
+
+.subtitle {
+    font-size: 1.5em;
+}
+
+
+/* Common class for mat-input elements */
+.mat-input-custom-height .mat-input-element {
+    height: 40px;
+    /* Adjust the height based on your preference */
+}
+
+/* Apply the common class to each mat-form-field */
+::ng-deep .mat-form-field-custom-height {
+    .mat-input-element {
+        height: 40px;
+        /* Adjust the height based on your preference */
+    }
+}
+
+.mat-form-field-color-height .mat-form-field-flex {
+    height: 40px;
+    /* Adjust the height based on your preference */
+}
+
+.form {
+    mat-form-field {
+        width: 200px;
+        height: 85px;
+        margin-bottom: 20px;
+    }
+
+    .mat-chip {
+        margin-bottom: 30px;
+    }
+}
+
+.mat-mdc-standard-chip {
+    --mdc-chip-elevated-container-color: white;
+    --mdc-chip-elevated-disabled-container-color: white;
+}
+
+.mat-mdc-standard-chip.mat-accent.mat-mdc-chip-selected {
+    --mdc-chip-elevated-container-color: #4f8963
+}
+
+.my-color-pic {
+    margin-top: -8px;
+    vertical-align: bottom;
+}
+
+// ::ng-deep .mat-mdc-raised-button.mat-primary {
+//     --mdc-protected-button-container-color: #4f8963 !important;
+//     --mdc-protected-button-label-text-color: #fff;
+// }
+
+// ::ng-deep .mat-mdc-raised-button.mat-primary :hover {
+//     --mdc-protected-button-container-color: #264d34;
+//     --mdc-protected-button-label-text-color: #fff;
+// }
+
+// .color-button.mat-mdc-raised-button.color-button {
+//     background-color: green;
+//     color: purple;
+//     border: 1px solid orange;
+// }

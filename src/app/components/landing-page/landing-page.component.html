@@ -1,0 +1,122 @@
+<div class="container d-flex align-items-center justify-content-center">
+
+    <div class="row">
+        <div class="caption col-lg-6 col-sm-12">
+
+            <div class="title">Discover Your Dream Car Today!</div>
+            <div class="subtitle">Explore a Wide Range of Quality Vehicles and Experience Exceptional Service</div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+
+            <div>
+                <form *ngIf="touched" [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+
+                    <mat-form-field appearance="outline" appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput formControlName="fullName">
+                        <mat-error *ngIf="form.get('fullName')?.hasError('required')">Required</mat-error>
+                        <mat-error *ngIf="form.get('fullName')?.hasError('pattern')">Only letters and spaces</mat-error>
+                        <mat-error *ngIf="form.get('fullName')?.hasError('minlength')">Min length: 2</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender">
+                            <mat-option *ngFor="let option of data.gender" [value]="option.id">{{ option.title
+                                }}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.get('gender')?.hasError('required')">Required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+                        <mat-error *ngIf="form.get('email')?.hasError('required')">Required</mat-error>
+                        <mat-error *ngIf="form.get('email')?.hasError('pattern')">Invalid email</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Birth Date:</mat-label>
+                        <input matInput [matDatepicker]="picker2" [max]="currentDate" [min]="minDate"
+                            placeholder="mm/dd/yyyy" formControlName="birthdate" />
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                        <mat-error *ngIf="form.get('birthdate')?.hasError('required')">Required</mat-error>
+                        <mat-error *ngIf="form.get('birthdate')?.hasError('invalidDate')">{{
+                            form.get('birthdate')?.getError('message') }}</mat-error>
+                    </mat-form-field>
+
+                    <!-- <div> -->
+                        <mat-form-field appearance="outline" >
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="address">
+                            <mat-error *ngIf="form.get('address')?.hasError('required')">Required</mat-error>
+                            <mat-error *ngIf="form.get('address')?.hasError('pattern')">Only a-z A-Z 0-9 , .
+                                /</mat-error>
+                            <mat-error *ngIf="form.get('address')?.hasError('minlength')">Min length: 2</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" >
+                            <mat-label>City</mat-label>
+                            <input matInput formControlName="city">
+                            <mat-error *ngIf="form.get('city')?.hasError('required')">Required</mat-error>
+                            <mat-error *ngIf="form.get('city')?.hasError('pattern')">Only letters and spaces</mat-error>
+                            <mat-error *ngIf="form.get('city')?.hasError('minlength')">Min length: 2</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" >
+                            <mat-label>Country</mat-label>
+                            <input matInput formControlName="country">
+                            <mat-error *ngIf="form.get('country')?.hasError('required')">Required</mat-error>
+                            <mat-error *ngIf="form.get('country')?.hasError('pattern')">Only letters and
+                                spaces</mat-error>
+                            <mat-error *ngIf="form.get('country')?.hasError('minlength')">Min length: 2</mat-error>
+                        </mat-form-field>
+                    <!-- </div> -->
+
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Hobbies</mat-label>
+                        <mat-select multiple formControlName="hobbies">
+                            <mat-option *ngFor="let option of data.hobbies" [value]="option.id">{{ option.title
+                                }}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.get('hobbies')?.hasError('required')">Required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Color</mat-label>
+                        <input matInput type="color" formControlName="favoriteColor" class="my-color-pic">
+                        <mat-error *ngIf="form.get('favoriteColor')?.hasError('required')">Required</mat-error>
+                    </mat-form-field>
+
+                    <div class="mat-chip">
+                        <mat-label>Seats</mat-label>
+                        <mat-chip-listbox selectable multiple appearance="outline" formControlName="seats" >
+                            <mat-chip-option color="accent" *ngFor="let option of data.seatsAmount" [value]="option">
+                                {{ option }}
+                            </mat-chip-option>
+                        </mat-chip-listbox>
+                        <mat-error
+                            *ngIf="form.get('seats')?.touched && form.get('seats')?.hasError('required')">Required</mat-error>
+                    </div>
+
+                    <div class="mat-chip">
+                        <mat-label>Motor Type</mat-label>
+                        <mat-chip-listbox selectable multiple formControlName="motorType">
+                            <mat-chip-option color="accent" *ngFor="let option of data.motorTypes"
+                                [value]="option.id">{{
+                                option.title }}</mat-chip-option>
+                        </mat-chip-listbox>
+                        <mat-error
+                            *ngIf="form.get('motorType')?.touched && form.get('motorType')?.hasError('required')">Required</mat-error>
+                    </div>
+
+                    <button mat-raised-button [disabled]="form.invalid" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
